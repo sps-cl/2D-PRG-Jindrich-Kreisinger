@@ -11,11 +11,11 @@ class Positionable {
         return this.position.y
     }
 
-    set x (value) {
+    set x(value) {
         this.position.x += value;
     }
-
-    set y (value) {
+    
+    set y(value) {
         this.position.y += value;
     }
 }

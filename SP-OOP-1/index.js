@@ -1,4 +1,4 @@
-let scene = new Scene (1900,900);
+let scene = new Scene(1900, 900);
 let background = new Background(scene.width,scene.height)
 
 scene.draw(background); 
@@ -11,5 +11,6 @@ console.log(circle1.collideWith(circle2));
 console.log(rect1.collideWith(rect2));
 console.log(circle2.collideWith(rect1));
 console.log(rect1.collideWith(circle1));
+ 
 
     

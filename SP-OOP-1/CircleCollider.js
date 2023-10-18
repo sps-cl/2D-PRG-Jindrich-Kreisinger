@@ -4,16 +4,16 @@ class CircleCollider extends Positionable{
         this.radius = radius;
     }
 
-    collideWith (other){
-        other.collideWithCircle(this)
+    collideWith(other) {
+        return other.collideWithCircle(this);
     }
-
-    collideWithRect (other){
-        CollisionDetection.checkRectCircleCollision(other,this);
+    
+    collideWithRect(other) {
+        return CollisionDetection.checkRectCircleCollision(other, this);
     }
 
     collideWithCircle (other){
-        CollisionDetection.checkCircleCollision(other,this);
+        return CollisionDetection.checkCircleCollision(other, this);
     }
 
     get leftEdge (){
@@ -28,7 +28,7 @@ class CircleCollider extends Positionable{
         return this.y;
     }
 
-    get bottomEgde(){
+    get bottomEdge(){
         return this.y + this.radius * 2
     }
 
@@ -44,12 +44,12 @@ class CircleCollider extends Positionable{
         this.y = value;
     }
 
-    set bottomEgde(value){
-         this.y = value - this.radius * 2;
+    set bottomEdge(value){
+        this.y = value - this.radius * 2;
     }
 
     get center() {
-        new Vector(this.x + this.radius, this.y + this.radius)
+        return new Vector(this.x + this.radius, this.y + this.radius)
 
     }
 }

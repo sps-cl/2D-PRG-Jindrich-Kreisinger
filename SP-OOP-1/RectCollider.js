@@ -5,16 +5,16 @@ class RectCollider extends Positionable{
         this.height = height;
     }
 
-    collideWith(other){
-        other.collideWithRect(this)
+    collideWith(other) {
+        return other.collideWithRect(this);
     }
-
-    collideWithRect(other){
-        CollisionDetection.checkRectCollision(this, other);
+    
+    collideWithRect(other) {
+        return CollisionDetection.checkRectCollision(this, other);
     }
 
     collideWithCircle(other){
-        CollisionDetection.checkRectCircleCollision(this, other);
+        return CollisionDetection.checkRectCircleCollision(this, other);
     }
 
     get leftEdge (){
@@ -29,7 +29,7 @@ class RectCollider extends Positionable{
         return this.y;
     }
 
-    get bottomEgde(){
+    get bottomEdge(){
         return this.y + this.height;
     }
 
@@ -37,7 +37,7 @@ class RectCollider extends Positionable{
         this.x = value;
     }
 
-    set rightEdge(value){
+    set rightEdge(value) {
         this.x = value - this.width;
     }
 
@@ -45,7 +45,7 @@ class RectCollider extends Positionable{
         this.y = value;
     }
 
-    set bottomEgde(value){
-         this.y = value - this.height;
+    set bottomEdge(value) {
+        this.y = value - this.height;
     }
 }
