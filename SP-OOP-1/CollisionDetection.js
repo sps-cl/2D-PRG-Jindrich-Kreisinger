@@ -17,7 +17,7 @@ class CollisionDetection{
         else if (closePoint.x > rect.rightEdge) closePoint.x = rect.rightEdge;
         if (closePoint.y < rect.topEdge) closePoint.y = rect.topEdge;
         else if (closePoint.y > rect.bottomEdge) closePoint.y = rect.bottomEdge;
-        closePoint.substract(center);
+        closePoint.subtract(center);
         return closePoint.squareSize < circle.radius * circle.radius;
     }
 }
