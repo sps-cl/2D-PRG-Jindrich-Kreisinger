@@ -6,7 +6,7 @@ class Cactus extends GameObject{
         this.collider = new RectCollider(position, width, height);
     }
     move(){
-        super.move;
+        super.move();
         if (this.collider.rightEdge < this.minBounds.x){
             this.onSceneExit()
         }

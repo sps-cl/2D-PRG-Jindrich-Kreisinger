@@ -12,13 +12,13 @@ class Player extends GameObject{
     }
 
     jump (){
-        if (this.grounded = true){
+        if (this.grounded == true){
             this.speed.y = -14;
         }
     }
     
     getUp (){
-        if (this.crouching = true){
+        if (this.crouching == true){
             this.collider = this.standingCollider;
             this.sprite = this.standingSprite;
             this.crouching = false;
@@ -26,24 +26,22 @@ class Player extends GameObject{
     }
 
     crouch (){
-        if (this.crouching = true){
+        if (this.crouching == true){
             return
         }
         this.crouching = true;
         this.collider = this.crouchingCollider;
-        this.sprite = this-this.crouchingSprite;
+        this.sprite = this.crouchingSprite;
         this.y += this.standingCollider.bottomEdge - this.crouchingCollider.bottomEdge;
     }
 
     move (){
         this.speed.y += 0.3;
-        super.move()
+        super.move();
         if ( this.collider.bottomEdge > this.maxBounds.y){
             this.collider.bottomEdge = this.maxBounds.y; 
             this.speed.y = 0;
             this.grounded = true;
         } else this.grounded = false
     }
-
-
 }
