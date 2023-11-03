@@ -12,13 +12,13 @@ class Player extends GameObject{
     }
 
     jump (){
-        if (this.grounded == true){
+        if (this.grounded){
             this.speed.y = -14;
         }
     }
     
     getUp (){
-        if (this.crouching == true){
+        if (this.crouching){
             this.collider = this.standingCollider;
             this.sprite = this.standingSprite;
             this.crouching = false;
@@ -26,7 +26,7 @@ class Player extends GameObject{
     }
 
     crouch (){
-        if (this.crouching == true){
+        if (this.crouching){
             return
         }
         this.crouching = true;
