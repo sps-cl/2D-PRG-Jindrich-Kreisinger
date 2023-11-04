@@ -1,4 +1,9 @@
 let scene = new Scene (1100,700);
+let backgroundLayer0 = new Background(scene.width, scene.height, 0.05,document.getElementById("layer0"));
+let backgroundLayer1 = new Background(scene.width, scene.height, 0.2,document.getElementById("layer1")); 
+let backgroundLayer2 = new Background(scene.width, scene.height, 1.0,document.getElementById("layer2"));
+let backgroundLayer3 = new Background(scene.width, scene.height, 1.5,document.getElementById("layer3"));
+let backgroundLayer4 = new Background(scene.width, scene.height,2,document.getElementById("layer4"));
 let background = new Background(scene.width,scene.height);
 let score = new Score(new Vector(scene.width / 2, 50), "Arial", 30);
 let player = new Player (new Vector(100, 0), 150);
@@ -50,10 +55,18 @@ function gameLoop() {
     player.move();
     obstacle1.move();
     obstacle2.move();
-    scene.draw(background,player,obstacle1,obstacle2,score);
-    if(player.collideWith(obstacle1) || player.collideWith(obstacle2)){
+    backgroundLayer0.move(); 
+    backgroundLayer1.move(); 
+    backgroundLayer2.move();
+    backgroundLayer3.move(); 
+    backgroundLayer4.move(); 
+
+    scene.draw(backgroundLayer0, backgroundLayer1, backgroundLayer2,backgroundLayer3,backgroundLayer4, player, obstacle1, obstacle2, score);
+    
+    if (player.collideWith(obstacle1) || player.collideWith(obstacle2)) {
         return;
     }
+    
     requestAnimationFrame(gameLoop);
 }
 
